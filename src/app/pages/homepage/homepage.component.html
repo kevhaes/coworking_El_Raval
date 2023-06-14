@@ -30,7 +30,7 @@
 <br />
 <ng-container *ngIf="auth.isAuthenticated$ | async">
 <br />
-<section id="fh5co-home" data-section="home" style=" height: 300px; background-color:teal">
+<section id="fh5co-home" data-section="home" style=" height: 60%; background-color:teal">
   <div class="container ">
 
     <div class="row ">
@@ -38,15 +38,31 @@
         <div class="row ">
 
        <br />
-        <ng-container *ngIf="auth.user$ | async as user">
-          <h2> Welcome {{ user.name }}</h2>
-          <div>  <!--{{ user.name }}--> </div>
-          <div>  <img [src]="user.picture" style=" vertical-align: middle; width: 50px; height: 50px; border-radius: 50%;"></div>
-         
+       <ng-container *ngIf="auth.user$ | async as user">
+         <h2>
+           Welcome {{ user.name }}
+           <!--<ng-template *ngIf="!user.email_verified; else mail_is_verified">(not verified)</ng-template>
+    <ng-template #mail_is_verified>(verified)</ng-template>-->
+         </h2>
 
-        </ng-container>
-        <div><a href="#" target="_blank"> Reserve your desk</a></div>
-        <div>  <a href="#" target="_blank">Check Your access pin</a></div>
+         <h5> email verified:  {{ user.email_verified }}</h5>
+         <div>  <!--{{ user.name }}--> </div>
+         <div>  <img [src]="user.picture" style=" vertical-align: middle; width: 50px; height: 50px; border-radius: 50%;"></div>
+
+
+         <!--<div><a href="#" target="_blank">Personal pin</a></div>-->
+         <app-personal-pin [user]="currentUser"></app-personal-pin>
+         <app-booking-form [user]="currentUser"></app-booking-form>
+           <!--<ng-container *ngIf="!user.email_verified; else mail_is_verified">
+      <a href="#" target="_blank">Reserve a desk (Verify mail first)</a>
+    </ng-container>
+    <ng-template #mail_is_verified>-->
+           <!--<a href="#" target="_blank">Reserve a desk</a>-->
+           <!--<app-booking-form [user]="currentUser"></app-booking-form>
+    </ng-template>-->
+
+       </ng-container>
+      
         </div>
         <!--<a href="#" data-nav-section="pricing" class="download animate-box"><i class="icon-whatsapp"></i> Contact</a>-->
       </div>

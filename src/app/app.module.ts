@@ -9,7 +9,6 @@ import { LoginComponent } from './shared/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
-import { AngularMaterialModule } from "./angular-material.module";
 import { AuthButtonComponent } from './shared/auth-button/auth-button.component';
 
 // Import the module from the SDK
@@ -17,25 +16,27 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { SecretpageComponent } from './pages/secretpage/secretpage.component';
 
 import { environment } from './../environments/environment';
+import { BookingFormComponent } from './pages/booking-form/booking-form.component';
+import { DatePipe } from '@angular/common';
+import { PersonalPinComponent } from './pages/personal-pin/personal-pin.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    ModalComponent,
     LoginComponent,
     AuthButtonComponent,
     SecretpageComponent,
-    //FormsModule
+    BookingFormComponent,
+    PersonalPinComponent,
   ],
   imports: [
+    FormsModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule,
-    // Import the module into the application, with configuration
     AuthModule.forRoot({
       domain: environment.domain,
       clientId: environment.clientId,
@@ -44,9 +45,8 @@ import { environment } from './../environments/environment';
       }
     }),
   ],
-  providers: [
+  providers: [DatePipe],
 
-  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

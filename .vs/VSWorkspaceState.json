@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\pages",
-    "\\src\\app\\pages\\secretpage",
+    "\\src\\app\\pages\\booking-form",
     "\\src\\app\\shared",
-    "\\src\\app\\shared\\auth-button",
+    "\\src\\app\\shared\\login",
     "\\src\\app\\shared\\services",
     "\\src\\assets",
     "\\src\\assets\\js"
   ],
-  "SelectedNode": "\\src\\app\\pages\\homepage\\homepage.component.html",
+  "SelectedNode": "\\src\\app\\pages\\booking-form\\booking-form.component.css",
   "PreviewInSolutionExplorer": false
 }

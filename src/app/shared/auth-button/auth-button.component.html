@@ -8,10 +8,13 @@
 <ng-template #loggedOut>
   <button (click)="auth.loginWithRedirect()">Log in</button>
 </ng-template>
+
+
+<!--<ng-container *ngIf="!auth.user$.email_verified">Please verify your email</ng-container>-->
 <!--<ng-container *ngIf="auth.user$ | async as user">
   <ul>
-    <li>{{ user.name }}</li>-->
-    <!--<li>  <img [src]="user.picture"> </li>-->
-  <!--</ul>
-   
+    <li>{{ user.name }}</li>
+<!--<li>  <img [src]="user.picture"> </li>-->
+<!--</ul>
+
 </ng-container>-->

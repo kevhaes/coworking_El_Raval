@@ -1,0 +1,70 @@
+form {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 20px;
+  background-color: #508080;
+  border: 1px solid #bd8880;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  /*transition: transform 0.3s ease;*/
+  /*transition: visibility 1s, opacity 0.5s linear;*/
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #C7A750;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bd8880;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #bd8880;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #996633;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  margin-top: 5px;
+}
+
+.expandable {
+  background: #fff;
+  overflow: hidden;
+  color: #000;
+  line-height: 50px;
+  transition: all .5s ease-in-out;
+  height: 0;
+}
+
+  .expandable:target {
+    height: 500px;
+  }

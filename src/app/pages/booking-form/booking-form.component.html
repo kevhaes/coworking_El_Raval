@@ -1,0 +1,38 @@
+<a href="#" (click)="book_a_desk_open=!book_a_desk_open"> Book A Desk</a>
+<ng-container *ngIf="user.email_verified; else mail_not_verified">
+  <br class="mb-5" />
+  <form (ngSubmit)="submitForm()" [hidden]="book_a_desk_open">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="booking.name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="booking.email" required>
+    </div>
+    <div class="form-group">
+      <label for="date_from">From:</label>
+      <input type="date" class="form-control" id="date_from" name="date_from" [(ngModel)]="booking.date_from" dateFormat="yy-mm-dd" required>
+    </div>
+    <div class="form-group">
+      <label for="date_to">To:</label>
+      <input type="date" class="form-control" id="date_to" name="date_to" [(ngModel)]="booking.date_to" dateFormat="yy-mm-dd" required>
+    </div>
+    <div class="form-group">
+      <label for="desk">Desk:</label>
+      <select class="form-control" id="desk" name="desk" [(ngModel)]="booking.desk">
+        <option [value]="0" disabled selected>Select a desk</option>
+        <option *ngFor="let desk of desks" [value]="desk.id">{{ desk.name }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Book Desk</button>
+  </form>
+</ng-container>
+<ng-template #mail_not_verified>
+  <br />
+  <p [hidden]="book_a_desk_open">please verify mail to see this section</p>
+</ng-template>
+
+<br />
+
